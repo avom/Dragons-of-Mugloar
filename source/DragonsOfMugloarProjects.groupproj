@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E69ED441-B3A1-4ECF-8989-4E07DD39852D}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DragonsOfMugloar.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Test\DragonsOfMugloarTests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DragonsOfMugloar">
+        <MSBuild Projects="DragonsOfMugloar.dproj"/>
+    </Target>
+    <Target Name="DragonsOfMugloar:Clean">
+        <MSBuild Projects="DragonsOfMugloar.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DragonsOfMugloar:Make">
+        <MSBuild Projects="DragonsOfMugloar.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DragonsOfMugloarTests">
+        <MSBuild Projects="Test\DragonsOfMugloarTests.dproj"/>
+    </Target>
+    <Target Name="DragonsOfMugloarTests:Clean">
+        <MSBuild Projects="Test\DragonsOfMugloarTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DragonsOfMugloarTests:Make">
+        <MSBuild Projects="Test\DragonsOfMugloarTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DragonsOfMugloar;DragonsOfMugloarTests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DragonsOfMugloar:Clean;DragonsOfMugloarTests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DragonsOfMugloar:Make;DragonsOfMugloarTests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

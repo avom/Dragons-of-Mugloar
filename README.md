@@ -28,7 +28,7 @@ If we already building the table we just look up for the correct entry and find 
 
 Easy to beat. Don't send anything (don't put a dragon argument).
 
-## Heavy rain with floods
+### Heavy rain with floods
 
 Looks like easy win as well. It seems using scale thickness and claw sharpness 10 kills any incoming knight.
 

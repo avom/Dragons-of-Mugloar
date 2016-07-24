@@ -2,7 +2,19 @@
 
 Plays the game at http://www.dragonsofmugloar.com/ and consistently winning.
 
-## Everyday regular normal weather
+## Usage
+
+Release binary is compiled for Windows. It is a command line application which takes one argument: the number of games to play. For example to play 100 games use:
+
+    DragonsOfMugloar.exe 100
+
+## Code, tools
+
+Compiled and tested with Delphi XE5 in Windows. Uses (included in repository) superobject library for working with JSON.
+
+## Strategy
+
+### Everyday regular normal weather
 
 This one is the only weather that actually requires some effort to beat. For that there's a table of winning dragon for each possible knight:
 
@@ -12,7 +24,7 @@ This one is the only weather that actually requires some effort to beat. For tha
 
 If we already building the table we just look up for the correct entry and find the return the correct permutation of winning dragon attributes.
 
-## Storm
+### Storm
 
 Easy to beat. Don't send anything (don't put a dragon argument).
 
@@ -20,10 +32,10 @@ Easy to beat. Don't send anything (don't put a dragon argument).
 
 Looks like easy win as well. It seems using scale thickness and claw sharpness 10 kills any incoming knight.
 
-## The long dry
+### The long dry
 
 Seems another easy win. The description hints that a balanced dragon should be sent. Sending a dragon with all attributes at 5 seems to be winning everything.
 
-## Fog
+### Fog
 
 Probably the easiest to win. Any dragon wins as long as you assign valid attribute values.
